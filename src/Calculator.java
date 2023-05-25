@@ -1,5 +1,6 @@
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Calculator {
@@ -7,8 +8,8 @@ public class Calculator {
     private static int numberOfLetters = 0;
     private static int maxLength = 0;
     private static int minLength = 100;
-    private static ArrayList<String> longestWords = new ArrayList<String>();
-    private static ArrayList<String> shortestWords = new ArrayList<String>();
+    private static HashSet<String> longestWords = new HashSet<String>();
+    private static HashSet<String> shortestWords = new HashSet<String>();
 
     public static int getNumberOfWords() {
         return numberOfWords;
@@ -18,11 +19,11 @@ public class Calculator {
         return numberOfLetters;
     }
 
-    public static ArrayList<String> getLongestWords() {
+    public static HashSet<String> getLongestWords() {
         return longestWords;
     }
 
-    public static ArrayList<String> getShortestWords() {
+    public static HashSet<String> getShortestWords() {
         return shortestWords;
     }
 

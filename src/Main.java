@@ -13,7 +13,7 @@ public class Main {
         }
         while (true){
             if(Thread.activeCount()==2&&Thread.currentThread().isAlive()){
-                System.out.println(Calculator.getNumberOfWords());
+                System.out.println( Calculator.getNumberOfWords());
                 System.out.println(Calculator.getNumberOfLetters());
                 for (String str:Calculator.getLongestWords()
                      ) {
