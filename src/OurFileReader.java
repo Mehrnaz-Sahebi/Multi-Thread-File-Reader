@@ -12,30 +12,42 @@ public class OurFileReader implements Runnable{
     @Override
     public void run(){
         try (FileReader fileReader = new FileReader(fileName)){
+            Scanner inputScanner=new Scanner(fileReader);
+            Calculator.caculateNumberOfWords(inputScanner);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        try (FileReader fileReader = new FileReader(fileName)){
+            Scanner inputScanner = new Scanner(fileReader);
+            Calculator.saveAllWords(inputScanner);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+        try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner = new Scanner(fileReader);
             Calculator.caculateNumberOfLetters(inputScanner);
 
         }catch (IOException e){
             e.printStackTrace();
         }
-        try (FileReader fileReader = new FileReader(fileName)){
-            Scanner inputScanner=new Scanner(fileReader);
-            Calculator.caculateNumberOfWords(inputScanner);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+
         try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner=new Scanner(fileReader);
             Calculator.calculateMaxLength(inputScanner);
         }catch (IOException e){
             e.printStackTrace();
         }
+
         try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner=new Scanner(fileReader);
             Calculator.calculateMinLength(inputScanner);
         }catch (IOException e){
             e.printStackTrace();
         }
+
         try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner=new Scanner(fileReader);
             Calculator.findTheLongestWords(inputScanner);
@@ -43,6 +55,7 @@ public class OurFileReader implements Runnable{
         catch (IOException e){
             e.printStackTrace();
         }
+
         try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner=new Scanner(fileReader);
             Calculator.findTheShortestWords(inputScanner);

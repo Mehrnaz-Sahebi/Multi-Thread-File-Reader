@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Calculator {
+    private static HashSet<String> allWords = new HashSet<String>();
     private static int numberOfWords = 0;
     private static int numberOfLetters = 0;
     private static int maxLength = 0;
@@ -34,7 +35,11 @@ public class Calculator {
     public static int getMinLength() {
         return minLength;
     }
-
+    public synchronized static void  saveAllWords (Scanner inputScanner){
+        while (inputScanner.hasNext()){
+            allWords.add(inputScanner.next());
+        }
+    }
     public synchronized static void caculateNumberOfWords(Scanner inputScanner){
         int currentNumberOfWords = 0;
         while (inputScanner.hasNext()){

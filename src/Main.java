@@ -13,7 +13,7 @@ public class Main {
         }
         while (true){
             if(Thread.activeCount()==2&&Thread.currentThread().isAlive()){
-                System.out.println( Calculator.getNumberOfWords());
+                System.out.println("Calculator.getNumberOfWords());
                 System.out.println(Calculator.getNumberOfLetters());
                 for (String str:Calculator.getLongestWords()
                      ) {
@@ -26,21 +26,5 @@ public class Main {
                 break;
             }
         }
-
-
-
-//        int checkNumber = 0;
-//        for (int i = 1; i < 21; i++) {
-//            try (FileReader fileReader = new FileReader("./Assets/file_"+Integer.toString(i)+".txt")){
-//                Scanner scanner = new Scanner(fileReader);
-//                while (scanner.hasNext()){
-//                    checkNumber+=scanner.next().length();
-//                }
-//            }
-//            catch (IOException e){
-//                e.printStackTrace();
-//            }
-//        }
-//        System.out.println(checkNumber);
     }
 }
