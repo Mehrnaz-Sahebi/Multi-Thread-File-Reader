@@ -26,14 +26,28 @@ public class OurFileReader implements Runnable{
         }
         try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner=new Scanner(fileReader);
-            Calculator.findTheLongestWord(inputScanner);
+            Calculator.calculateMaxLength(inputScanner);
         }catch (IOException e){
             e.printStackTrace();
         }
         try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner=new Scanner(fileReader);
-            Calculator.findTheShortestWord(inputScanner);
+            Calculator.calculateMinLength(inputScanner);
         }catch (IOException e){
+            e.printStackTrace();
+        }
+        try (FileReader fileReader = new FileReader(fileName)){
+            Scanner inputScanner=new Scanner(fileReader);
+            Calculator.findTheLongestWords(inputScanner);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        try (FileReader fileReader = new FileReader(fileName)){
+            Scanner inputScanner=new Scanner(fileReader);
+            Calculator.findTheShortestWords(inputScanner);
+        }
+        catch (IOException e){
             e.printStackTrace();
         }
     }

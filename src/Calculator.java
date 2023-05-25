@@ -1,4 +1,5 @@
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculator {
@@ -6,8 +7,8 @@ public class Calculator {
     private static int numberOfLetters = 0;
     private static int maxLength = 0;
     private static int minLength = 100;
-    private static String longestWord;
-    private static String shortestWord;
+    private static ArrayList<String> longestWords = new ArrayList<String>();
+    private static ArrayList<String> shortestWords = new ArrayList<String>();
 
     public static int getNumberOfWords() {
         return numberOfWords;
@@ -17,12 +18,12 @@ public class Calculator {
         return numberOfLetters;
     }
 
-    public static String getLongestWord() {
-        return longestWord;
+    public static ArrayList<String> getLongestWords() {
+        return longestWords;
     }
 
-    public static String getShortestWord() {
-        return shortestWord;
+    public static ArrayList<String> getShortestWords() {
+        return shortestWords;
     }
 
     public static int getMaxLength() {
@@ -48,21 +49,35 @@ public class Calculator {
         }
         numberOfLetters+=currentNumberOfLetters;
     }
-    public synchronized static void findTheLongestWord(Scanner inputScanner){
+    public synchronized static void calculateMaxLength(Scanner inputScanner){
         while (inputScanner.hasNext()){
             String currentWord = inputScanner.next();
             if(currentWord.length()>maxLength){
                 maxLength = currentWord.length();
-                longestWord = currentWord;
             }
         }
     }
-    public synchronized static void findTheShortestWord(Scanner inputScanner){
+    public synchronized static void findTheLongestWords(Scanner inputScanner){
+        while (inputScanner.hasNext()){
+            String currentWord = inputScanner.next();
+            if(currentWord.length()==maxLength){
+                longestWords.add(currentWord);
+            }
+        }
+    }
+    public synchronized static void calculateMinLength(Scanner inputScanner){
         while (inputScanner.hasNext()){
             String currentWord = inputScanner.next();
             if(currentWord.length()<minLength){
                 minLength = currentWord.length();
-                shortestWord = currentWord;
+            }
+        }
+    }
+    public synchronized static void findTheShortestWords(Scanner inputScanner){
+        while (inputScanner.hasNext()){
+            String currentWord = inputScanner.next();
+            if(currentWord.length()==minLength){
+                shortestWords.add(currentWord);
             }
         }
     }

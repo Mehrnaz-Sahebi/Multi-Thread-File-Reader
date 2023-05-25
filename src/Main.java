@@ -15,9 +15,13 @@ public class Main {
             if(Thread.activeCount()==2&&Thread.currentThread().isAlive()){
                 System.out.println(Calculator.getNumberOfWords());
                 System.out.println(Calculator.getNumberOfLetters());
-                System.out.println(Calculator.getLongestWord());
+                for (String str:Calculator.getLongestWords()
+                     ) {
+                    System.out.println(str);
+                }
+                System.out.println(Calculator.getLongestWords().size());
                 System.out.println(Calculator.getMaxLength());
-                System.out.println(Calculator.getShortestWord());
+//                System.out.println(Calculator.getShortestWord());
                 System.out.println(Calculator.getMinLength());
                 break;
             }
