@@ -17,6 +17,8 @@ public class Main {
                 System.out.println(Calculator.getNumberOfLetters());
                 System.out.println(Calculator.getLongestWord());
                 System.out.println(Calculator.getMaxLength());
+                System.out.println(Calculator.getShortestWord());
+                System.out.println(Calculator.getMinLength());
                 break;
             }
         }

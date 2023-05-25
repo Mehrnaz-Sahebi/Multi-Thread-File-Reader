@@ -5,7 +5,7 @@ public class Calculator {
     private static int numberOfWords = 0;
     private static int numberOfLetters = 0;
     private static int maxLength = 0;
-    private static int minLength = 0;
+    private static int minLength = 100;
     private static String longestWord;
     private static String shortestWord;
 
@@ -54,6 +54,15 @@ public class Calculator {
             if(currentWord.length()>maxLength){
                 maxLength = currentWord.length();
                 longestWord = currentWord;
+            }
+        }
+    }
+    public synchronized static void findTheShortestWord(Scanner inputScanner){
+        while (inputScanner.hasNext()){
+            String currentWord = inputScanner.next();
+            if(currentWord.length()<minLength){
+                minLength = currentWord.length();
+                shortestWord = currentWord;
             }
         }
     }
