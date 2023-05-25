@@ -1,8 +1,3 @@
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Scanner;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,16 +8,23 @@ public class Main {
         }
         while (true){
             if(Thread.activeCount()==2&&Thread.currentThread().isAlive()){
-                System.out.println("Calculator.getNumberOfWords());
-                System.out.println(Calculator.getNumberOfLetters());
-                for (String str:Calculator.getLongestWords()
-                     ) {
-                    System.out.println(str);
+                System.out.println("Words Count: "+ Calculator.getAllWords().size());
+                System.out.println();
+                System.out.println("All words length average: " + (double)Calculator.getNumberOfLetters() / (double)Calculator.getNumberOfWords());
+                System.out.println();
+                System.out.printf("Longest words which have the length %d:\n",Calculator.getMaxLength());
+                for (String str:Calculator.getLongestWords()) {
+                    if(str.length()==Calculator.getMaxLength()){
+                        System.out.println(str);
+                    }
                 }
-                System.out.println(Calculator.getLongestWords().size());
-                System.out.println(Calculator.getMaxLength());
-//                System.out.println(Calculator.getShortestWord());
-                System.out.println(Calculator.getMinLength());
+                System.out.println();
+                System.out.printf("Shortest words which have the length %d:\n",Calculator.getMinLength());
+                for (String str:Calculator.getShortestWords()) {
+                    if(str.length()==Calculator.getMinLength()) {
+                        System.out.println(str);
+                    }
+                }
                 break;
             }
         }

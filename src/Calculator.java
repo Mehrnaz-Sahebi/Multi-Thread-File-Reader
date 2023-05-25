@@ -12,6 +12,10 @@ public class Calculator {
     private static HashSet<String> longestWords = new HashSet<String>();
     private static HashSet<String> shortestWords = new HashSet<String>();
 
+    public static HashSet<String> getAllWords() {
+        return allWords;
+    }
+
     public static int getNumberOfWords() {
         return numberOfWords;
     }
