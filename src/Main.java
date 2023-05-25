@@ -15,6 +15,8 @@ public class Main {
             if(Thread.activeCount()==2&&Thread.currentThread().isAlive()){
                 System.out.println(Calculator.getNumberOfWords());
                 System.out.println(Calculator.getNumberOfLetters());
+                System.out.println(Calculator.getLongestWord());
+                System.out.println(Calculator.getMaxLength());
                 break;
             }
         }

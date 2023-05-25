@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class Calculator {
     private static int numberOfWords = 0;
     private static int numberOfLetters = 0;
+    private static int maxLength = 0;
+    private static int minLength = 0;
     private static String longestWord;
     private static String shortestWord;
 
@@ -23,6 +25,14 @@ public class Calculator {
         return shortestWord;
     }
 
+    public static int getMaxLength() {
+        return maxLength;
+    }
+
+    public static int getMinLength() {
+        return minLength;
+    }
+
     public synchronized static void caculateNumberOfWords(Scanner inputScanner){
         int currentNumberOfWords = 0;
         while (inputScanner.hasNext()){
@@ -37,6 +47,15 @@ public class Calculator {
             currentNumberOfLetters+=inputScanner.next().length();
         }
         numberOfLetters+=currentNumberOfLetters;
+    }
+    public synchronized static void findTheLongestWord(Scanner inputScanner){
+        while (inputScanner.hasNext()){
+            String currentWord = inputScanner.next();
+            if(currentWord.length()>maxLength){
+                maxLength = currentWord.length();
+                longestWord = currentWord;
+            }
+        }
     }
 
 }

@@ -24,5 +24,11 @@ public class OurFileReader implements Runnable{
         }catch (IOException e){
             e.printStackTrace();
         }
+        try (FileReader fileReader = new FileReader(fileName)){
+            Scanner inputScanner=new Scanner(fileReader);
+            Calculator.findTheLongestWord(inputScanner);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
