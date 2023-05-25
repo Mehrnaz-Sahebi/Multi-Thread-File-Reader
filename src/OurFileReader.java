@@ -13,6 +13,13 @@ public class OurFileReader implements Runnable{
     public void run(){
         try (FileReader fileReader = new FileReader(fileName)){
             Scanner inputScanner = new Scanner(fileReader);
+            Calculator.caculateNumberOfLetters(inputScanner);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        try (FileReader fileReader = new FileReader(fileName)){
+            Scanner inputScanner=new Scanner(fileReader);
             Calculator.caculateNumberOfWords(inputScanner);
         }catch (IOException e){
             e.printStackTrace();

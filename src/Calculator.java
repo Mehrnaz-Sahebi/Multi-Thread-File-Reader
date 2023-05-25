@@ -31,5 +31,12 @@ public class Calculator {
         }
         numberOfWords+=currentNumberOfWords;
     }
+    public synchronized static void caculateNumberOfLetters(Scanner inputScanner){
+        int currentNumberOfLetters = 0;
+        while (inputScanner.hasNext()){
+            currentNumberOfLetters+=inputScanner.next().length();
+        }
+        numberOfLetters+=currentNumberOfLetters;
+    }
 
 }
